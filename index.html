@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="TTTApp">
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.5/angular.min.js"></script>
+	<script src="app.js"></script>
+	<title>Tic Tac Toe</title>
+</head>
+<body>
+	<div ng-controller="TTTController">  <!-- initialize the controller -->
+		{{testString}} <!-- Tests to see if ng-app and ng-controller are set up correctly. If it works, nothing should show up. -->
+
+		<div class="container">
+			<div class="heading"> <h1> Tic Tac Toe</h1></div>
+
+		<div class="theBox"> <!-- creates the box which encompases the cells -->
+			<div class="cells" ng-repeat="thisCell in cellList" ng-click="playerAlternator(thisCell)" ng-class="{iAmX: thisCell.status == 'X', iAmO: thisCell.status == 'O'}">	<!-- ng-repeat creates the multiple cells via cellList, ng-click initializes the eventlistener to run the function. ng-class changes th e class of the cells to iAmX or iAmO depending on if the var thisCell.status is x or O as defined in the function. QUESTION- does ng-class need to be in the same div as the ng-module that calls the function?-->	
+			</div>
+		</div>
+
+
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+.theBox {
+	margin-left:100px;
+	width: 468px;
+	height: 468px;
+	border: 1px solid black;
+	margin: 0 auto;
+}
+
+.cells{
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	float: left;
+	margin:2px;
+	padding:0px;
+}
+
+.iAmX{
+	background-color:lightblue;
+}
+
+.iAmO{
+	background-color:lightgrey;
+}
+
+h1{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: center;
+}
