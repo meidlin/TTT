@@ -19,6 +19,10 @@ TTTApp.controller('TTTController', function ($scope){ //sets up the controller
 	$scope.counter = 0; //declaring global var counter for the upcoming f(x) payerAlternator.
 
 	$scope.playerAlternator= function (thisCell) { //start of alternator function which switches clicks between users
+		if (thisCell.status=="X" || thisCell.status=="O"){ //if statement which will check to see if the cell equals X or O. If it does, BAIL! 
+			return;
+		}
+		//otherwise, proceed with the function
 		$scope.counter++; //each time the function repeats (via click), increment the var counter.
 		console.log("Cell was: " + thisCell.status) ; //check to see what the previous value was.
 			if (($scope.counter % 2) !=0) { //if counter is even after modulo, the cell's status = X. If odd, make it equal O. 
