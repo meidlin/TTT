@@ -16,13 +16,18 @@ TTTApp.controller('TTTController', function ($scope){ //sets up the controller
 	{status:null, data: 256},
 	]
 
-//Alternator Logic + Pushing specific numbers into player1 & player2 arrays. 
-	$scope.counter = 0; //declaring global var counter for the upcoming f(x) payerAlternator.
-
-//adding the player1 player 2 totals	
+//(Alternator, player data, win)logics
+	//Declerations
+	$scope.counter = 0; //counter for X / O playerAlternator function.
 	player1 = []; //create empty arrary of player1, where numbers will go
 	player2 = []; //create empty array of player2, where numbers will go
+	wins = [7,56,448,73,146,292,273,84]; //declaring win conditions
+	player1winsCounter = 0; //player 1 win counter
+	player2winsCounter = 0; //player 2 win counter
 
+	//Changing scope of win counter in order to ng-bind
+	$scope.player1winsCounter = player1winsCounter;
+	$scope.player2winsCounter = player2winsCounter;
 
 // });
 
@@ -40,54 +45,56 @@ TTTApp.controller('TTTController', function ($scope){ //sets up the controller
 				player1.push(thisCell.data); //push said number(data) into player2 array
 				console.log(player1); //test to see if this works
 
-
-			}
-			else{
+				//for loop adding the values of player1 
+				player1Total = 0;
+				for (i=0; i< player1.length; i++){
+				player1Total += player1[i]
+				};
+				console.log("Player 1 total: " + player1Total);
+				//win logic for player 1
+					for (i=0; i < wins.length; i++){
+						if (player1Total === wins[i]) {
+							console.log("PLAYER 1 WINS");
+							player1winsCounter++;
+							console.log("Player 1 has won " + player1winsCounter + " times");
+						};
+					}
+				
+			} else {
 				thisCell.status ="O";
 				//player2 data
 				player2.push(thisCell.data); //push said number(data) into player2 array
 				console.log(player2); //test to see if this works
-				
+
+				//for loop adding the values of player2
+				player2Total = 0;
+				for (i=0; i< player2.length; i++){
+				player2Total += player2[i];
+				};
+				console.log("Player 2 total: " + player2Total);
+				//win logic for player 2
+					for (i=0; i < wins.length; i++){
+						if (player2Total === wins[i]){
+							console.log("PLAYER 2 WINS");
+							player2winsCounter++;
+							console.log("PLayer 2 has won " + player2winsCounter + " times");
+						};
+					}
 			}
-			console.log("This cell is now: " + thisCell.status) ; //check to see if it changed the status of the cell properly
-			
-
-			
-			//for loop adding the values of player1 
-			player1Total = 0;
-			for (i=0; i< player1.length; i++){
-			player1Total += player1[i];
-			};
-			console.log("Player 1 total: " + player1Total);
-			
-			//for loop adding the values of player2
-			player2Total = 0;
-			for (i=0; i< player2.length; i++){
-			player2Total += player2[i];
-			console.log("Player 2 total: " + player2Total);
-			};
-
+			//check to see cell is X or O
+			console.log("This cell is now: " + thisCell.status) ; 
 	}
 
 });
 
-			
-
-
-
-//Win Logic 
-wins = [7,56,448,73,146,292,273,84];
-
-
-
 //play again Logic
 function playAgain(){
-    y=confirm("Play again??");// confirm will show a popup box with the values "OK" or "CANCEL", choosing ok will yield the value "true" to y, otherwise, false.
+    y=confirm("Play again??");
     if(y==true){
         alert("Everyday I see my dream");
-        location.reload(true);//We reload the page automatically! Yeah, with all that crazy animation at the beginning.
+        location.reload(true);//reloads the entire page
     }
     else{
-alert("bye");//Don't want to quit? Prepare for a world of pain. This one I did not cover.
+alert("bye");
     }
 }

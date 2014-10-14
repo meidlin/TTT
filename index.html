@@ -18,7 +18,16 @@
 			<div class="cells" ng-repeat="thisCell in cellList" ng-click="playerAlternator(thisCell)" ng-class="{iAmX: thisCell.status == 'X', iAmO: thisCell.status == 'O'}">	<!-- ng-repeat creates the multiple cells via cellList, ng-click initializes the eventlistener to run the function. ng-class changes th e class of the cells to iAmX or iAmO depending on if the var thisCell.status is x or O as defined in the function. QUESTION- does ng-class need to be in the same div as the ng-module that calls the function?-->	
 			</div>
 		</div>
+
 <button onclick="playAgain()">Play again</button>
+<div class="wincounter" ng-controller="TTTController">
+	<h1>
+		Player 1 Win Counter:{{player1winsCounter}}
+	</h1>
+	<h1>
+		Player 2 Win Counter: {{player2winsCounter}}
+	</h1>
+</div>
 
 		</div>
 	</div>
