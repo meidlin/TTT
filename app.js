@@ -19,11 +19,11 @@ TTTApp.controller('TTTController', function ($scope){ //sets up the controller
 //(Alternator, player data, win)logics
 	//Declerations
 	$scope.counter = 0; //counter for X / O playerAlternator function.
-	player1 = []; //create empty arrary of player1, where numbers will go
-	player2 = []; //create empty array of player2, where numbers will go
-	wins = [7,56,448,73,146,292,273,84]; //declaring win conditions
-	player1winsCounter = 0; //player 1 win counter
-	player2winsCounter = 0; //player 2 win counter
+	var player1 = []; //create empty arrary of player1, where numbers will go
+	var player2 = []; //create empty array of player2, where numbers will go
+	var wins = [7,56,448,73,146,292,273,84]; //declaring win conditions
+	var player1winsCounter = 0; //player 1 win counter
+	var player2winsCounter = 0; //player 2 win counter
 
 	//Changing scope of win counter in order to ng-bind
 	$scope.player1winsCounter = player1winsCounter;
@@ -51,6 +51,8 @@ TTTApp.controller('TTTController', function ($scope){ //sets up the controller
 				player1Total += player1[i]
 				};
 				console.log("Player 1 total: " + player1Total);
+
+
 				//win logic for player 1
 					for (i=0; i < wins.length; i++){
 						if (player1Total === wins[i]) {
@@ -91,7 +93,6 @@ TTTApp.controller('TTTController', function ($scope){ //sets up the controller
 function playAgain(){
     y=confirm("Play again??");
     if(y==true){
-        alert("Everyday I see my dream");
         location.reload(true);//reloads the entire page
     }
     else{
