@@ -24,16 +24,16 @@ var TTTApp = angular.module('TTTApp', ["firebase"]) //sets up the angular app
 	var wins = [7,56,448,73,146,292,273,84]; //declaring win conditions
 	$scope.player1winsCounter = 0; //player 1 win counter
 	$scope.player2winsCounter = 0; //player 2 win counter
-	$scope.player1Total = 0;
-	$scope.player2Total = 0;
+	$scope.thePlayer1Total = 0;
+	$scope.thePlayer2Total = 0;
 
 
 // This container object is what gets synced:
   $scope.gameContainer = {
     cellList: $scope.cellList,
     clickCounter: $scope.counter,
-    player1Total: $scope.player1Total,
-    player2Total: $scope.player2Total,
+    player1Total: $scope.thePlayer1Total,
+    player2Total: $scope.thePlayer2Total,
     player1: player1,
     player2: player2,
     wins: wins
@@ -48,35 +48,18 @@ var TTTApp = angular.module('TTTApp', ["firebase"]) //sets up the angular app
 
  //For some reason, only resets after 2 games 
   $scope.newGame = function () {
-		$scope.gameContainer.cellList = [	
-		{status:"empty", data: 1},
-		{status:"empty", data: 2},
-		{status:"empty", data: 4},
-		{status:"empty", data: 8},
-		{status:"empty", data: 16},
-		{status:"empty", data: 32},
-		{status:"empty", data: 64},
-		{status:"empty", data: 128},
-		{status:"empty", data: 256}
-		];
-		$scope.cellList = [	
-		{status:"empty", data: 1},
-		{status:"empty", data: 2},
-		{status:"empty", data: 4},
-		{status:"empty", data: 8},
-		{status:"empty", data: 16},
-		{status:"empty", data: 32},
-		{status:"empty", data: 64},
-		{status:"empty", data: 128},
-		{status:"empty", data: 256}
-		];
+  		//resets board
+		for(i = 0; i < 9; i++){
+		$scope.gameContainer.cellList[i].status="empty";
+		$scope.gameContainer.cellList[i].data= Math.pow(2,i);
+		};
 
 		console.log($scope.cellList[0]);
 		$scope.gameContainer.counter = 0;
 		$scope.gameContainer.player1 = 0;
 		$scope.gameContainer.player2 = 0;
-		$scope.gameContainer.player1Total = 0;
-		console.log($scope.gameContainer.player1Total); //test
+		$scope.gameContainer.player1Total = 0; //reset player1Total to 0
+		console.log("player1 total is " + $scope.gameContainer.player1Total); //test player1Total
 		$scope.gameContainer.player2Total = 0;
 		console.log("Play again was clicked"); //test
 		$scope.gameContainer.counter = 0;
