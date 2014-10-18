@@ -1,9 +1,19 @@
+body{
+	/*background-image:url("http://2.bp.blogspot.com/-2_ALIBBPkvo/UzylgdJDE8I/AAAAAAABk2Y/gSMS1UxY4PU/s1600/Workaholics+Cover+Editorial+Bello+Magazine+April+2014+(5).jpg");*/
+	background-size:100%;
+}
+.container{
+	width: 468px;
+	height: 800px;
+	border: 1px solid black;
+}
+
 .theBox {
-	margin-left:100px;
+	margin: auto, auto;
+	float: left;
 	width: 468px;
 	height: 468px;
 	border: 1px solid black;
-	margin: 0 auto;
 }
 
 .cells{
@@ -16,15 +26,84 @@
 }
 
 .iAmX{
-	background-color:lightblue;
+	background-image: url("images/karl.jpg");
+	background-position: center;
+	background-size: 150px 150px;
 }
 
 .iAmO{
-	background-color:lightgrey;
+	background-image: url("images/jetset.jpg");
+	background-position: center;
+	background-size: 150px 150px;
 }
-
 
 h1{
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-align: center;
+}
+.character1{
+	width:465px;
+	height:155px;
+	border: 1px solid black;
+	margin: 0 auto;
+	float:left;
+
+}
+
+.inner{
+	position:relative;
+	float:left;
+	margin:0 auto;
+}
+
+.trio{
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	float: left;
+	background-position: center;
+	background-size: 150px 150px;
+	margin: 1px ;
+
+}
+#blake{
+	background-image: url("images/blake.jpg");
+}
+
+#ders{
+	background-image: url("images/ders.jpg");
+}
+
+#adam{
+	background-image: url("images/adam.jpg");
+}
+
+#karl{
+	background-image: url("images/karl.jpg");
+}
+
+#jetset{
+	background-image: url("images/jetset.jpg");
+}
+
+#jillian{
+	background-image: url("images/jillian.jpg");
+}
+#waymond{
+	background-image: url("images/waymond.jpg");
+}
+#montez{
+	background-image: url("images/montez.jpg");
+}
+#alice{
+	background-image: url("images/alice.jpg");
+}
+#letsgetweird{
+	background-image: url("images/letsgetweird.gif");
+	background-repeat: no-repeat;
+}
+.wincounter{
+	border: 1px solid black;
+	width:400px;
+	float:left;
 }

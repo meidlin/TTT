@@ -4,6 +4,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css"></link>
 	<!-- Normalize CSS -->
     <link rel="stylesheet" src="https://normalize-css.googlecode.com/svn/trunk/normalize.min.css">
+	<!-- Sweet Alert -->
+	<script src="lib/sweet-alert.min.js"></script> <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script> 
     <!-- Firebase -->
@@ -19,23 +21,31 @@
 <body>
 	<div ng-controller="TTTController">  <!-- initialize the controller -->
 		{{testString}} <!-- Tests to see if ng-app and ng-controller are set up correctly. If it works, nothing should show up. -->
-
-		<div class="container">
-			<div class="heading"> <h1> Tic Tac Toe</h1></div>
+<!-- Choose a player -->
+<div class="container">
+	<div class= "inner" class="character1">
+			<div class="trio" id="blake" ng-click=""></div>
+			<div class="trio" id="ders"></div>
+			<div class="trio" id="adam"></div>
+	 </div>
+	<!-- The game board -->
+			<!-- <div class="heading"> <h1> Tic Tac Toe</h1></div> -->
 		<div class="theBox"> <!-- creates the box which encompases the cells -->
-			<div class="cells" ng-repeat="thisCell in gameContainer.cellList" ng-click="playerAlternator(thisCell)" ng-class="{iAmX: thisCell.status == 'X', iAmO: thisCell.status == 'O'}">	<!-- ng-repeat creates the multiple cells via cellList, ng-click initializes the eventlistener to run the function. ng-class changes th e class of the cells to iAmX or iAmO depending on if the var thisCell.status is x or O as defined in the function. QUESTION- does ng-class need to be in the same div as the ng-module that calls the function?-->	
+			<div class="cells" ng-repeat="thisCell in gameContainer.cellList" ng-click="playerAlternator(thisCell)" ng-class="{
+			iAmX: thisCell.status == 'X',
+			iAmO: thisCell.status == 'O'
+		}">	
 			</div>
 		</div>
-
-<button ng-click="newGame()">Play again</button>
+ 
+<!-- The win counter -->
 <div class="wincounter" ng-controller="TTTController">
-	<h1>
-		Player 1 Win Counter:{{$scope.player1winsCounter}}
-	</h1>
-	<h1>
-		Player 2 Win Counter: {{$scope.player2winsCounter}}
-	</h1>
+	<h1>Player 1 Win Counter: {{$scope.gameContainer.player1winsCounter}}</h1>
+	<h1>Player 2 Win Counter: {{$scope.gameContainer.player2winsCounter}}</h1>
 </div>
+</div>
+<!-- Choose a player -->
+
 
 		</div>
 	</div>
