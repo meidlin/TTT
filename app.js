@@ -115,13 +115,14 @@ var TTTApp = angular.module('TTTApp', ["firebase"]) //sets up the angular app
 						};
 					}
 			}
+
 					
 				
 
 //whatever, betch
 $scope.goPlayerOne = function () {
     swal({
-      title: "Player 1",   
+      title: "Player 1", 
       text: "You get to go first!",
       imageUrl: "images/player1.png",     
       confirmButtonText: "cool"
