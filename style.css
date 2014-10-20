@@ -1,11 +1,15 @@
 body{
-	/*background-image:url("http://2.bp.blogspot.com/-2_ALIBBPkvo/UzylgdJDE8I/AAAAAAABk2Y/gSMS1UxY4PU/s1600/Workaholics+Cover+Editorial+Bello+Magazine+April+2014+(5).jpg");*/
-	background-size:100%;
+	/*background-image:url("http://personaldopeness.files.wordpress.com/2012/08/workaholics_3-2_full.jpg");
+	background-image:url("http://www.fanaru.com/workaholics/image/7026-workaholics-workaholics.jpg");
+	background-size:110%;
+	background-repeat:no-repeat;*/
 }
 .container{
 	width: 468px;
-	height: 800px;
+	height: 468px;
 	border: 1px solid black;
+	margin: auto auto;
+	z-index: -1;
 }
 
 .theBox {
@@ -27,18 +31,24 @@ body{
 
 .iAmX{
 	background-image: url("images/karl.jpg");
+	background-color: white;
 	background-position: center;
 	background-size: 150px 150px;
+	opacity: .9;
 }
 
 .iAmO{
 	background-image: url("images/jetset.jpg");
 	background-position: center;
 	background-size: 150px 150px;
+	opacity: .9;
 }
 
 h1{
 	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: center;
+}
+h2{
 	text-align: center;
 }
 .character1{
@@ -103,7 +113,7 @@ h1{
 	background-repeat: no-repeat;
 }
 .wincounter{
-	border: 1px solid black;
-	width:400px;
-	float:left;
+	width:465px;
+	height:100px;
+	margin: auto auto;
 }

@@ -84,7 +84,8 @@ var TTTApp = angular.module('TTTApp', ["firebase"]) //sets up the angular app
 						if (($scope.gameContainer.player1Total & wins[i]) == wins[i]) {
 							$scope.gameContainer.player1winsCounter++;
 							console.log("Player 1 has won " + $scope.gameContainer.player1winsCounter + " times");
-								//alert player 1 wins
+								
+                //alert player 1 wins
 								swal({
 									title: "Player 1 wins!",      
 									type: "success",   
