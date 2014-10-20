@@ -1,13 +1,13 @@
 body{
-	/*background-image:url("http://personaldopeness.files.wordpress.com/2012/08/workaholics_3-2_full.jpg");
+	background-image:url("http://personaldopeness.files.wordpress.com/2012/08/workaholics_3-2_full.jpg");
 	background-image:url("http://www.fanaru.com/workaholics/image/7026-workaholics-workaholics.jpg");
 	background-size:110%;
-	background-repeat:no-repeat;*/
+	background-repeat:no-repeat;
 }
 .container{
-	width: 468px;
-	height: 468px;
-	border: 1px solid black;
+	width: 474px;
+	height: 474px;
+	border: 4px solid black;
 	margin: auto auto;
 	z-index: -1;
 }
@@ -15,17 +15,17 @@ body{
 .theBox {
 	margin: auto, auto;
 	float: left;
-	width: 468px;
-	height: 468px;
+	width: 474px;
+	height: 474px;
 	border: 1px solid black;
 }
 
 .cells{
 	width: 150px;
 	height: 150px;
-	border: 1px solid black;
+	border: 3px solid black;
 	float: left;
-	margin:2px;
+	margin: 1px;
 	padding:0px;
 }
 
@@ -74,46 +74,29 @@ h2{
 	background-position: center;
 	background-size: 150px 150px;
 	margin: 1px ;
-
-}
-#blake{
-	background-image: url("images/blake.jpg");
-}
-
-#ders{
-	background-image: url("images/ders.jpg");
-}
-
-#adam{
-	background-image: url("images/adam.jpg");
-}
-
-#karl{
-	background-image: url("images/karl.jpg");
-}
-
-#jetset{
-	background-image: url("images/jetset.jpg");
-}
-
-#jillian{
-	background-image: url("images/jillian.jpg");
-}
-#waymond{
-	background-image: url("images/waymond.jpg");
-}
-#montez{
-	background-image: url("images/montez.jpg");
-}
-#alice{
-	background-image: url("images/alice.jpg");
-}
-#letsgetweird{
-	background-image: url("images/letsgetweird.gif");
-	background-repeat: no-repeat;
 }
 .wincounter{
 	width:465px;
 	height:100px;
 	margin: auto auto;
+	background-color:black;
+	opacity: .8;
+}
+.winz{
+	font-size: 24px;
+	color:white;
+	opacity: 1;
+}
+h2{
+	color:red;
+	font-size: 36px;
+}
+h1{
+	color:green;
+	font-style:bold;
+	background-color:white;
+	opacity:.8;
+	width:500px;
+	margin: auto auto;
+	border-radius:10px;
 }
