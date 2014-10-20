@@ -19,7 +19,7 @@
 <body>
 	<div ng-controller="TTTController">  <!-- initialize the controller -->
 		<div class="bodyTitle"> <h1> 2 Player Tic Tac Toe </h1> 
-			<h2 ng-bind="'You are player ' + gameContainer.numPlayers">{{gameContainer.numPlayers}} </h2>
+			<h2 ng-bind="'You are player ' + gameContainer.numPlayers">{{gameContainer.playerNum}} </h2>
 		</div>
 		<div class="container">
 				<div class="theBox"> 
@@ -30,8 +30,8 @@
 		</div>
 
 		<div class="wincounter" ng-model="TTTController">
-			<p>JetSet Win Counter: {{gameContainer.player1winsCounter}}</p>
-			<p>Karl Win Counter: {{gameContainer.player2winsCounter}}</p>
+			<p>Karl Win Counter: {{gameContainer.player1winsCounter}}</p>
+			<p>Jetset Win Counter: {{gameContainer.player2winsCounter}}</p>
 		</div>
 	</div>
 </body>
