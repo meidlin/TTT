@@ -116,9 +116,6 @@ var TTTApp = angular.module('TTTApp', ["firebase"]) //sets up the angular app
 					}
 			}
 
-					
-				
-
 //whatever, betch
 $scope.goPlayerOne = function () {
     swal({
